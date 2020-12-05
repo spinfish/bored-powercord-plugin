@@ -5,7 +5,7 @@ a very simple powercord plugin which adds a ``bored`` command to give you ideas 
 1. make sure you have powercord installed ([click here](https://powercord.dev/installation "hi there") to do that)
 2. go to your where your powercord folder is
 3. navigate to the ``src`` > ``Powercord`` > ``plugins`` folder
-4. right click this and select ``Git Bash here`` (as shown in the screenshot below), and then type:
+4. right click this and select ``Git Bash Here`` (as shown in the screenshot below), and then type:
 
 ```shell
 git clone https://github.com/spinfish/bored-powercord-plugin
