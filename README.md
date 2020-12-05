@@ -2,10 +2,13 @@
 a very simple powercord plugin which adds a ``bored`` command to give you ideas of things to do when bored.
 
 ## installation
-right click on your powercord folder, then on the ``src > Powercord > plugins`` folder and click "Git Bash here" (as shown in the screenshot below), and then type:
+1. make sure you have powercord installed ([click here](https://powercord.dev/installation "hi there") to do that)
+2. go to your where your powercord folder is
+3. navigate to the ``src`` > ``Powercord`` > ``plugins`` folder
+4. right click this and select ``Git Bash here`` (as shown in the screenshot below), and then type:
 
 ```shell
-git clone https://github.com/spinfish/bored
+git clone https://github.com/spinfish/bored-powercord-plugin
 ```
 
 ![image](https://media.discordapp.net/attachments/668999977833463821/784620760617451550/gitbashhere_.png?width=455&height=253)
@@ -13,5 +16,5 @@ git clone https://github.com/spinfish/bored
 ## license
 MIT, see [`LICENSE`](./LICENSE.md) for more details
 
-## preview
+## examples
 ![image](https://media.discordapp.net/attachments/668999977833463821/784630038947037195/unknown.png)

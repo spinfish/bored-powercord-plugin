@@ -6,7 +6,7 @@ module.exports = class Bored extends Plugin {
     startPlugin() {
         powercord.api.commands.registerCommand({
             command: 'bored',
-            description: 'Bust your boredom (hopefully)!',
+            description: 'Bust your boredom (hopefully) !',
             usage: '{c}',
             executor: this.search.bind(this)
         })
@@ -23,7 +23,7 @@ module.exports = class Bored extends Plugin {
         return s.charAt(0).toUpperCase() + s.slice(1);
     }
 
-    randomHexCode() {
+    randomColourInteger() {
         return Math.floor(Math.random() * 16777215);
     }
 
@@ -59,7 +59,7 @@ module.exports = class Bored extends Plugin {
                 type: 'rich',
                 title: 'Feeling bored? How about you...',
                 description: `${activityDescription}!`,
-                color: this.randomHexCode(),
+                color: this.randomColourInteger(),
                 fields: [{
                     name: 'Extra information',
                     value: information.join('\n'),
