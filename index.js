@@ -22,7 +22,11 @@ module.exports = class Bored extends Plugin {
   }
 
   doCapitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    if(typeof string === 'string') {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    } else {
+      return string;
+    }
   }
 
   async search() {
@@ -31,12 +35,13 @@ module.exports = class Bored extends Plugin {
       result: 'Something broke with the API :('
     };
 
+    let jsonBody;
     try {
-      const jsonBody = await get(boredApiUrl).then(resp => resp.body);
+      jsonBody = await get(boredApiUrl).then(resp => resp.body);
     } catch (error) {
         console.error('Error occurred in Bored plugin: ', error);
         return fallback;
-      }
+    }
 
     if (!jsonBody.activity) {
       return fallback;
@@ -46,13 +51,13 @@ module.exports = class Bored extends Plugin {
 
     Object.entries(jsonBody).forEach((arrayItem) => {
       const [ key, value ] = arrayItem;
-      const keyCapitalized = `• ${capitalize(key)}: `;
+      const keyCapitalized = `• ${this.doCapitalize(key)}: `;
       let valueCapitalized; // gotta do this otherwise reference errors
 
       if (key === 'link' && value) {
         valueCapitalized = `[Click Here](${value})`;
       } else {
-          valueCapitalized = capitalize(value || 'none');
+        valueCapitalized = this.doCapitalize(value || 'none');
       }
       information.push(keyCapitalized + valueCapitalized);
     });
