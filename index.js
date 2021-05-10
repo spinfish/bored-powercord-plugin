@@ -22,11 +22,10 @@ module.exports = class Bored extends Plugin {
   }
 
   doCapitalize(string) {
-    if(typeof string === 'string') {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-    } else {
-      return string;
+    if(typeof(string) !== 'string') {
+      string = string.toString();
     }
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   async search() {
